@@ -41,23 +41,28 @@ class Product extends Authenticatable
                 )
         ],
 
-        'candybar' => [
-            'name' => 'КендиБар',
-            'children' => array('сandybar' => 'КендиБар'),
-        ],
-
         'other' => [
-            'name' => 'Другое',
+            'name' => 'Разное',
             'children' => array('pryanik' => 'Пряники',
                 'zefir' => 'Зефир',
                 'postila' => 'Пастила',
-                'chetvertinka' => 'Торт Четвертинки'),
+                'chetvertinka' => 'Торт Четвертинки',
+                'candybar' => 'Кенди Бар'),
         ],
+
+        'candybar' => [
+            'name' => 'Блог',
+            'children' => array('сandybar' => 'КендиБар'),
+        ],
+
+
+
+
 
         'reviews' => [
             'name' => 'Отзывы',
-            'children' => array('reviews' => 'Наши Отзывы',
-                ),
-        ]
+            'children' => array('reviews' => 'Отзывы о магазине',
+            ),
+        ],
     );
 }

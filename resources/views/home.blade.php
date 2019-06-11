@@ -1,6 +1,10 @@
-@extends('layouts.app')
+@extends ('layout.main')
+@section('header')
+@stop
 
 @section('content')
+    <br>
+    <br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,10 +18,13 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Вы авторизированы!
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+@section('footer')
+@stop

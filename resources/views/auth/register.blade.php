@@ -73,9 +73,11 @@
 <br>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn">
                                     {{ __('Регистрация') }}
                                 </button>
+                                 <a href="/login">Я зарегистрирован</a></li>
+
                             </div>
                         </div>
                     </form>
