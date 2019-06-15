@@ -1,4 +1,4 @@
-@foreach(\App\Product::$categories as $url => $category)
+@foreach(\App\Menu::$categories as $url => $category)
 
     @if(isset($category['name']))
         <li class="dropdown grid">

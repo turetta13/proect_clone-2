@@ -2,67 +2,19 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Product extends Authenticatable
+class Product extends Model
+
 {
-    public static $categories = array(
-        'tort' => [
+    protected $fillable = [
+        'name', 'articul', 'brand', 'image_path', 'description',
+        'price',
+    ];
 
-            'tem' => [
-                'name' => 'Тематические',
-                'children' =>
-                    array('hp' => 'День Рождения',
-                        '8march' => '8 марта',
-                        'named' => 'Именные',
-                        'child' => 'Детские',
-                        'wedding' => 'Свадьба'),
+    protected $hidden = [
+        'category_id', 'parent_id', 'created_at', 'updated_at'
+    ];
 
-            ],
-            'sostav' => [
-                'name' => 'Состав',
-                'children' =>
-                    array('medovik' => 'Медовик',
-                        'napoleon' => 'Наполеон',
-                        'biskvit' => 'Бисквит'),
-            ]
-
-            ,
-        ],
-        'piroj' => [
-            'name' => 'Пирожные',
-            'children' =>
-                array(
-                    'cupcake' => 'Капкейки',
-                    'beze' => 'Безе',
-                    'pavlova' => 'Десерт Павлова',
-                )
-        ],
-
-        'other' => [
-            'name' => 'Разное',
-            'children' => array('pryanik' => 'Пряники',
-                'zefir' => 'Зефир',
-                'postila' => 'Пастила',
-                'chetvertinka' => 'Торт Четвертинки',
-                'candybar' => 'Кенди Бар'),
-        ],
-
-        'candybar' => [
-            'name' => 'Блог',
-            'children' => array('сandybar' => 'КендиБар'),
-        ],
-
-
-
-
-
-        'reviews' => [
-            'name' => 'Отзывы',
-            'children' => array('reviews' => 'Отзывы о магазине',
-            ),
-        ],
-    );
 }
+

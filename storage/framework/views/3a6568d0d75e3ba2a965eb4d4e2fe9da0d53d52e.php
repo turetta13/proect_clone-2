@@ -1,4 +1,8 @@
-    <title>Sayadova Baker | Продукция</title>
+<?php
+$Products = App\Product::where('publish', '=', '1')->get();
+?>
+
+<title>Sayadova Baker | Продукция</title>
     <head>
         <title>Yummy | Продукция</title>
         <!-- Custom Theme files -->
@@ -76,16 +80,17 @@
                             </div>
                         </div>
                     </a>
+
+                    <?php $__currentLoopData = $Products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $url => $key): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        dump (<?php echo e($key->image_path); ?>)
+
                     <div class="product-info simpleCart_shelfItem">
                         <div class="product-info-cust prt_name">
-                            <h4>Product #1</h4>
-                            <span class="item_price">$2000.00</span>
-                            <div class="ofr">
-                                <p class="pric1">
-                                    <del>$2300.00</del>
-                                </p>
-                                <p class="disc">[15% Off]</p>
-                            </div>
+                            <h4><?php echo e($key->name); ?></h4>
+                            <span class="item_price"><?php echo e($key->price); ?></span>
+
+
+
                             <input type="text" class="item_quantity" value="1"/>
                             <input type="button" class="item_add items" value="Add">
                             <div class="clearfix"></div>
@@ -93,16 +98,17 @@
                     </div>
                 </div>
                 <div class="product-grid">
-                    <a href="/single">
+                    <a href="<?php echo e($url); ?>">
                         <div class="more-product"><span> </span></div>
                         <div class="product-img b-link-stripe b-animate-go  thickbox">
-                            <img src="images/m3.png" class="img-responsive" alt=""/>
+                            <img src="<?php echo e($key->image_path); ?>" class="img-responsive" alt=""/>
                             <div class="b-wrapper">
                                 <h4 class="b-animate b-from-left  b-delay03">
                                     <button> View</button>
                                 </h4>
                             </div>
                         </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </a>
                     <div class="product-info simpleCart_shelfItem">
                         <div class="product-info-cust prt_name">

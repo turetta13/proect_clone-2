@@ -1,4 +1,4 @@
-<?php $__currentLoopData = \App\Product::$categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $url => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+<?php $__currentLoopData = \App\Menu::$categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $url => $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
     <?php if(isset($category['name'])): ?>
         <li class="dropdown grid">

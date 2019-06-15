@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Database;
+use App\Product;
+use App\Article;
+use App\Order;
+use App\Orders_to_product;
+use App\Category;
+
 
 class HomeController extends Controller
 {
@@ -16,13 +23,28 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function getArticles()
+    {
+        $articles = Article::all();
+        return;
+    }
+
+    public function getProducts()
+    {
+        $Products = App\Product::where('publish', '=', '1')->get();
+        foreach ($Products as $key) {
+            return $key->name . ' ' . $key->description . '<br> ';
+        }
+
+    }
+
     public function index()
     {
-        return view('home');
+        $user = \Auth::user();
+        return view('home', [
+            'user' => $user
+        ]);
+
     }
 }

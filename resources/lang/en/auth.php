@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Логин или пароль введены некорректно',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'throttle' => 'Слишком много попыток входа в систему. Пожалуйста, повторите попытку через :seconds seconds.',
 
 ];

@@ -10,6 +10,8 @@ class Category extends Authenticatable
 {
     
       protected $fillable = [
-        'name', 'slug',
+        'name', 'description','publish'
+
+
     ];
 }

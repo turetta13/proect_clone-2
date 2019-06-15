@@ -62,16 +62,6 @@ class PageController extends Controller
         return view('faq');
     }
 
-    public function test1()
-    {
-        return view('test1');
-    }
-
-    public function test2()
-    {
-        return view('test2');
-    }
-
         public function cat($slug)
     {
        $category =  \App\Category::where([
